@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is a Discord bot application built with Python and the discord.py library. The bot is designed to monitor messages from a specific Discord channel and forward them to an external webhook URL. It serves as a bridge between Discord and external services, enabling automated message forwarding and integration capabilities.
+This is a Discord bot application built with Python and the discord.py library. The bot is designed to monitor messages from a specific Discord channel and forward them to an external webhook URL.
 
 ## User Preferences
 
@@ -19,7 +19,7 @@ Preferred communication style: Simple, everyday language.
 - **Environment Variables**: Uses python-dotenv for secure configuration management
 - **JSON Filter Storage**: Persistent storage for filter words and phrases
 - **Key Configuration Parameters**:
-  - BOT_TOKEN: Discord bot authentication token
+  - BOT_TOKEN: Discord bot authentication token (set via `.env` file - never commit to repository)
   - SOURCE_CHANNEL_ID: Target Discord channel for message monitoring
   - WEBHOOK_URL: External endpoint for message forwarding
   - filter_words.json: Local file storing filter keywords and phrases
@@ -34,6 +34,21 @@ Preferred communication style: Simple, everyday language.
 - **Startup Validation**: Comprehensive configuration checking on bot initialization
 - **Channel Verification**: Validates source channel accessibility and permissions
 - **Graceful Degradation**: Continues operation with warnings for missing non-critical configuration
+
+## Setup Instructions
+
+### Environment Variables Setup
+1. Create a `.env` file in your project root (never commit this file)
+2. Add your bot token:
+   ```
+   BOT_TOKEN=your_discord_bot_token_here
+   ```
+3. The bot loads this automatically using `python-dotenv`
+
+### Important Security Notes
+- **Never commit bot tokens to version control** - use `.env` files instead
+- **Add `.env` to `.gitignore`** - keep secrets out of repositories
+- **Rotate tokens immediately** if accidentally exposed - go to Discord Developer Portal and regenerate
 
 ## Bot Commands
 
